@@ -60,7 +60,7 @@ jobs:
 
             echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
 
-            docker-compose pull app
-            docker-compose up -d app nginx
+            docker compose pull app
+            docker compose up -d app nginx
 
             docker image prune -f
